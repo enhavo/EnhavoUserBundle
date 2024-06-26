@@ -2,15 +2,15 @@
 
 namespace Enhavo\Bundle\UserBundle\View\Type;
 
-use Enhavo\Bundle\AppBundle\Action\ActionManager;
 use Enhavo\Bundle\AppBundle\Grid\GridManager;
-use Enhavo\Bundle\AppBundle\Resource\ResourceManager;
-use Enhavo\Bundle\AppBundle\View\Type\UpdateViewType;
 use Enhavo\Bundle\AppBundle\View\ViewUtil;
+use Enhavo\Bundle\ResourceBundle\Action\ActionManager;
+use Enhavo\Bundle\ResourceBundle\Resource\ResourceManager;
+use ResourceUpdateEndpointType;
 use Sylius\Bundle\ResourceBundle\Controller\EventDispatcherInterface;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceFormFactoryInterface;
 use Sylius\Bundle\ResourceBundle\Controller\SingleResourceProviderInterface;
-use Sylius\Component\Resource\Model\ResourceInterface;
+use Enhavo\Bundle\ResourceBundle\Model\ResourceInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\RouterInterface;
@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class ChangePasswordViewType extends UpdateViewType
+class ChangePasswordEndpointTypeResource extends ResourceUpdateEndpointType
 {
     private TokenStorageInterface $tokenStorage;
 
