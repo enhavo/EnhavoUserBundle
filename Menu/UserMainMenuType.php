@@ -8,15 +8,14 @@
 
 namespace Enhavo\Bundle\UserBundle\Menu;
 
-use Enhavo\Bundle\AppBundle\Menu\Menu\ListMenu;
+use Enhavo\Bundle\AppBundle\Menu\AbstractMenuType;
+use Enhavo\Bundle\AppBundle\Menu\Type\ListMenuType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserMainMenu extends ListMenu
+class UserMainMenuType extends AbstractMenuType
 {
     public function configureOptions(OptionsResolver $resolver)
     {
-        parent::configureOptions($resolver);
-
         $resolver->setDefaults([
             'icon' => 'people',
             'label' => 'user.label.user',
@@ -32,8 +31,13 @@ class UserMainMenu extends ListMenu
         ]);
     }
 
-    public function getType()
+    public static function getName(): ?string
     {
         return 'user';
+    }
+
+    public static function getParentType(): ?string
+    {
+        return ListMenuType::class;
     }
 }
