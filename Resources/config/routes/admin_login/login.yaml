@@ -4,14 +4,13 @@ enhavo_user_admin_login:
     path: /login
     methods: [GET, POST]
     defaults:
-        _format: html
-        _config: admin
-        _endpoint:
-            type: user_login_app
-            translations: EnhavoUserBundle
+        _expose: admin_login
+        _area: admin_login
         _vue:
             component: user-login
-            groups: admin
+            groups: admin_login
+        _endpoint:
+            type: admin
 
 enhavo_user_admin_logout:
     options:
@@ -19,10 +18,10 @@ enhavo_user_admin_logout:
     path: /logout
     methods: [GET, POST]
     defaults:
-        _config: admin
-        _endpoint:
-            type: user_login_app
-            translations: EnhavoUserBundle
+        _expose: admin_login
+        _area: admin_login
         _vue:
             component: user-logout
-            groups: admin
+            groups: admin_login
+        _endpoint:
+            type: admin
